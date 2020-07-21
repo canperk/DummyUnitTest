@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/DummyUnitTest/v16
+/.vs
+/src/Dummy/.vs/Dummy/v16
+/src/Dummy/Dummy.TextLibrary/obj

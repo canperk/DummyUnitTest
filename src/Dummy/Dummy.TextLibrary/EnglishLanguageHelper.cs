@@ -6,7 +6,11 @@ namespace Dummy.TextLibrary
     {
         public string Pluralize(string text)
         {
-            throw new NotImplementedException();
+            if (text.EndsWith("y"))
+            {
+                return text.Substring(0, text.Length - 1) + "ies";
+            }
+            return text + "s";
         }
     }
 }

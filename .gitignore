@@ -6,3 +6,5 @@
 /.vs
 /src/Dummy/.vs/Dummy/v16
 /src/Dummy/Dummy.TextLibrary/obj
+/test/Dummy.UnitTest/bin/Debug/netcoreapp3.1
+/test/Dummy.UnitTest/obj

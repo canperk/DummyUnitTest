@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.TextLibrary", "Dummy.TextLibrary\Dummy.TextLibrary.csproj", "{DDFD74A2-0D00-433A-A79E-EDAA56FAD8ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dummy.TextLibrary", "Dummy.TextLibrary\Dummy.TextLibrary.csproj", "{DDFD74A2-0D00-433A-A79E-EDAA56FAD8ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D410130-5FD3-4F70-88D6-4BD23AFBFEE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C3755947-EB6D-464A-87D1-CC2E5ECE7E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.UnitTest", "..\..\test\Dummy.UnitTest\Dummy.UnitTest.csproj", "{55B778DB-C2D8-4D5B-B904-DCC9F5356757}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{DDFD74A2-0D00-433A-A79E-EDAA56FAD8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDFD74A2-0D00-433A-A79E-EDAA56FAD8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDFD74A2-0D00-433A-A79E-EDAA56FAD8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B778DB-C2D8-4D5B-B904-DCC9F5356757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B778DB-C2D8-4D5B-B904-DCC9F5356757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B778DB-C2D8-4D5B-B904-DCC9F5356757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B778DB-C2D8-4D5B-B904-DCC9F5356757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDFD74A2-0D00-433A-A79E-EDAA56FAD8ED} = {7D410130-5FD3-4F70-88D6-4BD23AFBFEE5}
+		{55B778DB-C2D8-4D5B-B904-DCC9F5356757} = {C3755947-EB6D-464A-87D1-CC2E5ECE7E0F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F216B46E-40BD-4A70-963F-3B58E37877AE}

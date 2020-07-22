@@ -1,31 +1,30 @@
-using Dummy.TextLibrary;
-using NUnit.Framework;
+ï»¿using Dummy.TextLibrary;
+using Xunit;
 
 namespace Dummy.UnitTest
 {
     public class TurkishUnitTest
     {
         public LanguageHelper Sut { get; set; }
-        [SetUp]
-        public void Setup()
+        public TurkishUnitTest()
         {
             Sut = new LanguageHelper(Language.Turkish);
         }
 
-        [Test]
+        [Fact]
         public void PluralizeWordEndsWithBackVowels()
         {
-            Assert.That(Sut.Pluralize("çiçek"), Is.EqualTo("çiçekler"));
-            Assert.That(Sut.Pluralize("kedi"), Is.EqualTo("kediler"));
-            Assert.That(Sut.Pluralize("göl"), Is.EqualTo("göller"));
+            Assert.Equal("Ã§iÃ§ekler", Sut.Pluralize("Ã§iÃ§ek"));
+            Assert.Equal("kediler", Sut.Pluralize("kedi"));
+            Assert.Equal("gÃ¶ller", Sut.Pluralize("gÃ¶l"));
         }
 
-        [Test]
+        [Fact]
         public void PluralizeWordEndsWithFrontVowels()
         {
-            Assert.That(Sut.Pluralize("at"), Is.EqualTo("atlar"));
-            Assert.That(Sut.Pluralize("taký"), Is.EqualTo("takýlar"));
-            Assert.That(Sut.Pluralize("kuzu"), Is.EqualTo("kuzular"));
+            Assert.Equal("atlar", Sut.Pluralize("at"));
+            Assert.Equal("takÄ±lar", Sut.Pluralize("takÄ±"));
+            Assert.Equal("kuzular", Sut.Pluralize("kuzu"));
         }
     }
 }

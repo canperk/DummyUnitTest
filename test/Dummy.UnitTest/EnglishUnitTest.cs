@@ -1,31 +1,30 @@
 using Dummy.TextLibrary;
-using NUnit.Framework;
+using Xunit;
 
 namespace Dummy.UnitTest
 {
     public class EnglishUnitTest
     {
         public LanguageHelper Sut { get; set; }
-        [SetUp]
-        public void Setup()
+        public EnglishUnitTest()
         {
             Sut = new LanguageHelper(Language.English);
         }
 
-        [Test]
+        [Fact]
         public void PluralizeWordEndsWith_s()
         {
-            Assert.That(Sut.Pluralize("cat"), Is.EqualTo("cats"));
-            Assert.That(Sut.Pluralize("dog"), Is.EqualTo("dogs"));
-            Assert.That(Sut.Pluralize("flower"), Is.EqualTo("flowers"));
+            Assert.Equal("cats", Sut.Pluralize("cat"));
+            Assert.Equal("dogs", Sut.Pluralize("dog"));
+            Assert.Equal("flowers", Sut.Pluralize("flower"));
         }
 
-        [Test]
+        [Fact]
         public void PluralizeWordEndsWith_ies()
         {
-            Assert.That(Sut.Pluralize("lady"), Is.EqualTo("ladies"));
-            Assert.That(Sut.Pluralize("fairy"), Is.EqualTo("fairies"));
-            Assert.That(Sut.Pluralize("study"), Is.EqualTo("studies"));
+            Assert.Equal("ladies", Sut.Pluralize("lady"));
+            Assert.Equal("fairies", Sut.Pluralize("fairy"));
+            Assert.Equal("studies", Sut.Pluralize("study"));
         }
     }
 }

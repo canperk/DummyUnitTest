@@ -11,20 +11,16 @@ namespace Dummy.UnitTest
             Sut = new LanguageHelper(Language.English);
         }
 
-        [Fact]
-        public void PluralizeWordEndsWith_s()
+        [Theory]
+        [InlineData("cats", "cat")]
+        [InlineData("dogs", "dog")]
+        [InlineData("flowers", "flower")]
+        [InlineData("ladies", "lady")]
+        [InlineData("fairies", "fairy")]
+        [InlineData("studies", "study")]
+        public void GivenWords_ArePluralized(string expected, string value)
         {
-            Assert.Equal("cats", Sut.Pluralize("cat"));
-            Assert.Equal("dogs", Sut.Pluralize("dog"));
-            Assert.Equal("flowers", Sut.Pluralize("flower"));
-        }
-
-        [Fact]
-        public void PluralizeWordEndsWith_ies()
-        {
-            Assert.Equal("ladies", Sut.Pluralize("lady"));
-            Assert.Equal("fairies", Sut.Pluralize("fairy"));
-            Assert.Equal("studies", Sut.Pluralize("study"));
+            Assert.Equal(expected, Sut.Pluralize(value));
         }
     }
 }

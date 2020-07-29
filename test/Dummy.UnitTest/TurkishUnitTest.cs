@@ -1,4 +1,5 @@
 ﻿using Dummy.TextLibrary;
+using System.ComponentModel;
 using Xunit;
 
 namespace Dummy.UnitTest
@@ -11,20 +12,16 @@ namespace Dummy.UnitTest
             Sut = new LanguageHelper(Language.Turkish);
         }
 
-        [Fact]
-        public void PluralizeWordEndsWithBackVowels()
-        {
-            Assert.Equal("çiçekler", Sut.Pluralize("çiçek"));
-            Assert.Equal("kediler", Sut.Pluralize("kedi"));
-            Assert.Equal("göller", Sut.Pluralize("göl"));
-        }
-
-        [Fact]
-        public void PluralizeWordEndsWithFrontVowels()
-        {
-            Assert.Equal("atlar", Sut.Pluralize("at"));
-            Assert.Equal("takılar", Sut.Pluralize("takı"));
-            Assert.Equal("kuzular", Sut.Pluralize("kuzu"));
+        [Theory]
+        [InlineData("çiçekler", "çiçek")]
+        [InlineData("kediler", "kedi")]
+        [InlineData("göller", "göl")]
+        [InlineData("atlar", "at")]
+        [InlineData("takılar", "takı")]
+        [InlineData("kuzular", "kuzu")]
+        public void GivenWords_ArePluralized(string expected, string value)
+        { 
+            Assert.Equal(expected, Sut.Pluralize(value));
         }
     }
 }
